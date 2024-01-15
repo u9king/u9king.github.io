@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  
+  
+  <title>AngryBird | u9king&#39;s Blog</title>
+  
+  <meta name="author" content="u9king" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Unity" />
+  
+  <meta name="description" content="AngryBird1. 游戏背景​	《AngryBird》是一款由芬兰游戏开发公司Rovio Entertainment开发的独特而火爆的物理学游戏。该游戏于2009年12月首次推出，迅速在全球范围内引起轰动，成为一种文化现象。背景故事发生在一个美丽的岛屿群中，这里的宁静被一群狡猾的绿色猪所打破。这些猪偷走了愤怒的小鸟们的蛋，激起了小鸟们愤怒的怒火。为了夺回蛋并向猪们复仇，小鸟们决定以自己独特的方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngryBird">
+<meta property="og:url" content="https://u9king.github.io/2024/01/10/AngryBird/index.html">
+<meta property="og:site_name" content="u9king&#39;s Blog">
+<meta property="og:description" content="AngryBird1. 游戏背景​	《AngryBird》是一款由芬兰游戏开发公司Rovio Entertainment开发的独特而火爆的物理学游戏。该游戏于2009年12月首次推出，迅速在全球范围内引起轰动，成为一种文化现象。背景故事发生在一个美丽的岛屿群中，这里的宁静被一群狡猾的绿色猪所打破。这些猪偷走了愤怒的小鸟们的蛋，激起了小鸟们愤怒的怒火。为了夺回蛋并向猪们复仇，小鸟们决定以自己独特的方">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://u9king.github.io/2024/01/10/AngryBird/images/thumb/AngryBird.png">
+<meta property="article:published_time" content="2024-01-10T11:40:56.000Z">
+<meta property="article:modified_time" content="2024-01-15T07:14:41.311Z">
+<meta property="article:author" content="u9king">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://u9king.github.io/2024/01/10/AngryBird/images/thumb/AngryBird.png">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+    
+  </style>
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-paw"></i>
+                                                
+                                                档案馆
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                链接
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://github.com/u9king">
+                                                                
+                                                                代码仓库
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://candinya.com">
+                                                                
+                                                                主题博客
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">u9king&#39;s Blog</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>u9king&#39;s Blog</h2> <br />
+                        <span>Gamer</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://u9king.github.io/2024/01/10/AngryBird/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">AngryBird</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2024-01-10T11:40:56.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-01-10</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">u9king</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~6.03K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1705302881311"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AngryBird"><span class="toc-number">1.</span> <span class="toc-text">AngryBird</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B8%B8%E6%88%8F%E8%83%8C%E6%99%AF"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1. 游戏背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B8%B8%E6%88%8F%E5%86%85%E5%AE%B9"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2. 游戏内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">3. 核心机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">4. 基本组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%AE%BE%E8%AE%A1%E5%92%8C%E7%BC%96%E7%A0%81"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">5.设计和编码</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="AngryBird"><a href="#AngryBird" class="headerlink" title="AngryBird"></a>AngryBird</h1><h4 id="1-游戏背景"><a href="#1-游戏背景" class="headerlink" title="1. 游戏背景"></a>1. 游戏背景</h4><p>​	《AngryBird》是一款由芬兰游戏开发公司Rovio Entertainment开发的独特而火爆的物理学游戏。该游戏于2009年12月首次推出，迅速在全球范围内引起轰动，成为一种文化现象。背景故事发生在一个美丽的岛屿群中，这里的宁静被一群狡猾的绿色猪所打破。这些猪偷走了愤怒的小鸟们的蛋，激起了小鸟们愤怒的怒火。为了夺回蛋并向猪们复仇，小鸟们决定以自己独特的方式对付猪群。</p>
+<p>​		这款游戏在全球范围内都取得了极大的成功，无论是在亚洲、欧洲、北美还是南美，都有大量的玩家。由于其简单而有趣的玩法，它成功地突破了语言和文化的障碍，成为一种国际化的娱乐现象。</p>
+<h4 id="2-游戏内容"><a href="#2-游戏内容" class="headerlink" title="2. 游戏内容"></a>2. 游戏内容</h4><img src="/images/Unity/Games/AngryBird/1.png">
+
+<img src="/images/Unity/Games/AngryBird/2.png">
+
+<h4 id="3-核心机制"><a href="#3-核心机制" class="headerlink" title="3. 核心机制"></a>3. 核心机制</h4><ul>
+<li><strong>演示视频</strong></li>
+</ul>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1qb411c76x" width="580px" height="320px"></iframe>
+
+<p>​	游戏采用了简单直观的物理学原理，让玩家通过拉动弹弓并释放小鸟，以精准的角度和力度来摧毁猪群所在的各种结构，从而解救被偷走的蛋。</p>
+<h4 id="4-基本组件"><a href="#4-基本组件" class="headerlink" title="4. 基本组件"></a>4. <strong>基本组件</strong></h4><img src="/images/Unity/Games/AngryBird/Basic%20Components.png" style="zoom:60%">
+
+
+
+<table>
+<thead>
+<tr>
+<th>Animations</th>
+<th>动画控制器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Images</td>
+<td>精灵（图片）</td>
+</tr>
+<tr>
+<td>Materials</td>
+<td>材料（胜利粒子效果）</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>音乐</td>
+</tr>
+<tr>
+<td>Prefabs</td>
+<td>预制体</td>
+</tr>
+<tr>
+<td>Resources</td>
+<td>包含所有关卡(stage)内容</td>
+</tr>
+<tr>
+<td>Scenes</td>
+<td>场景</td>
+</tr>
+<tr>
+<td>Scripts</td>
+<td>C#脚本</td>
+</tr>
+<tr>
+<td>TileMap</td>
+<td>瓦片地图</td>
+</tr>
+</tbody></table>
+<h4 id="5-设计和编码"><a href="#5-设计和编码" class="headerlink" title="5.设计和编码"></a>5.设计和编码</h4><p>RedBirdControl的Coding，其中包括拉弹弓点击事件，相机跟随，小鸟销毁，使用技能，受伤切换等内容。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="comment">//using TreeEditor;</span></span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">RedBirdControl</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//获取状态</span></span><br><span class="line">    <span class="comment">//获取点击情况</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">bool</span> isClick;</span><br><span class="line">    <span class="comment">//获取飞行状态</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">bool</span> isFlying;</span><br><span class="line">    <span class="comment">//限制发射后不能进行选择</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">bool</span> canSelected = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">HideInInspector</span>]</span><br><span class="line">    <span class="keyword">public</span> SpringJoint2D sp;</span><br><span class="line">    <span class="keyword">protected</span> Rigidbody2D rg;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取爆炸特效</span></span><br><span class="line">    <span class="keyword">public</span> GameObject boomEffect;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//调用弹弓控制</span></span><br><span class="line">    <span class="keyword">private</span> SlingshotControl slingshot;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//平滑相机移动</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> smooth = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//小鸟音效</span></span><br><span class="line">    <span class="keyword">public</span> AudioClip selectSound;</span><br><span class="line">    <span class="keyword">public</span> AudioClip flySound;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//技能使用判断</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">bool</span> canUseSkill;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//受伤图片</span></span><br><span class="line">    <span class="keyword">public</span> Sprite hurtIMG;</span><br><span class="line">    <span class="keyword">protected</span> SpriteRenderer render;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//小鸟初始位置获取</span></span><br><span class="line">    <span class="keyword">private</span> Vector3 startPosition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Awake和Start的区别</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//默认初始赋值区域</span></span><br><span class="line">        sp = GetComponent&lt;SpringJoint2D&gt;();</span><br><span class="line">        rg = GetComponent&lt;Rigidbody2D&gt;();</span><br><span class="line">        render = GetComponent&lt;SpriteRenderer&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//默认初始赋值区域</span></span><br><span class="line">        slingshot = GameObject.Find(<span class="string">&quot;Slingshot&quot;</span>).GetComponent&lt;SlingshotControl&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//鼠标按下</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnMouseDown</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (canSelected)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//播放选中音效</span></span><br><span class="line">            AudioSource.PlayClipAtPoint(selectSound, transform.position);</span><br><span class="line">            isClick = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">//todo</span></span><br><span class="line">            <span class="comment">//动力学开启关闭的原因？</span></span><br><span class="line">            rg.isKinematic = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">//记录初始小鸟位置</span></span><br><span class="line">            startPosition = transform.position;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//鼠标抬起</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnMouseUp</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (canSelected)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//todo开启重力//即可解决++1</span></span><br><span class="line">            isClick = <span class="literal">false</span>;</span><br><span class="line">            rg.isKinematic = <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">//过0.1秒后飞出？0.1秒吗</span></span><br><span class="line">            Invoke(<span class="string">&quot;FlyOut&quot;</span>, <span class="number">0.1f</span>);</span><br><span class="line">            <span class="comment">//禁用划线组件</span></span><br><span class="line">            slingshot.rightRender.enabled = <span class="literal">false</span>;</span><br><span class="line">            slingshot.leftRender.enabled = <span class="literal">false</span>;</span><br><span class="line">            canSelected = <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">//开启小鸟旋转</span></span><br><span class="line">            rg.freezeRotation = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//小鸟跟随鼠标按下位置移动</span></span><br><span class="line">        <span class="keyword">if</span> (isClick)</span><br><span class="line">        &#123;</span><br><span class="line">            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);</span><br><span class="line">            transform.position -= <span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, Camera.main.transform.position.z);</span><br><span class="line">            <span class="keyword">if</span> (Vector3.Distance(transform.position, slingshot.rightPos.position) &gt; slingshot.maxBandDis)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//限制最大移动向量</span></span><br><span class="line">                Vector3 directionVector = (transform.position - slingshot.rightPos.position).normalized * slingshot.maxBandDis;</span><br><span class="line">                <span class="comment">//重新赋值最大位置</span></span><br><span class="line">                transform.position = directionVector + slingshot.rightPos.position;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (slingshot != <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                slingshot.DrawBands(transform);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//相机追随,数字大于10就会出现瓦片重载的问题</span></span><br><span class="line">        <span class="built_in">float</span> posX = transform.position.x;</span><br><span class="line">        <span class="comment">//相机跟随的最大距离可以通过调整Mathf.Clamp(posX, 0, 5)中的5来实现</span></span><br><span class="line">        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, <span class="keyword">new</span> Vector3(Mathf.Clamp(posX, <span class="number">0</span>, <span class="number">6</span>), Camera.main.transform.position.y,</span><br><span class="line">            Camera.main.transform.position.z), smooth * Time.deltaTime);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//飞行状态判定</span></span><br><span class="line">        <span class="keyword">if</span> (isFlying)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 检查小鸟是否静止落地或者超出最大距离后，1秒开始销毁</span></span><br><span class="line">            <span class="keyword">if</span> (rg.velocity.magnitude &lt; <span class="number">0.2f</span> || Mathf.Abs(transform.position.x - startPosition.x) &gt; <span class="number">6</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                isFlying = <span class="literal">false</span>;</span><br><span class="line">                Invoke(<span class="string">&quot;Ruin&quot;</span>, <span class="number">2</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//技能使用判断</span></span><br><span class="line">        <span class="keyword">if</span> (canUseSkill)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//如果点击鼠标,就可以使用技能</span></span><br><span class="line">            <span class="keyword">if</span>(Input.GetMouseButtonDown(<span class="number">0</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                UseSkill();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//小鸟飞出动作</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">FlyOut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//小鸟技能使用开启</span></span><br><span class="line">        canUseSkill = <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//飞出时关闭弹簧</span></span><br><span class="line">        sp.enabled = <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//播放飞行音效</span></span><br><span class="line">        AudioSource.PlayClipAtPoint(flySound, transform.position);</span><br><span class="line">        <span class="comment">//飞出3秒后执行销毁</span></span><br><span class="line">        <span class="comment">//todo应该更改为落地/静止后3秒销毁更加合理</span></span><br><span class="line">        <span class="comment">//Invoke(&quot;Ruin&quot;, 3);</span></span><br><span class="line">        <span class="comment">// 标记小鸟正在飞行</span></span><br><span class="line">        isFlying = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用技能，供各类小鸟继承</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">UseSkill</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//小鸟技能使用后关闭</span></span><br><span class="line">        canUseSkill = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//落地销毁小鸟</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Ruin</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//在游戏管理器中删除自身</span></span><br><span class="line">        GameManagerControl._instance.birds.Remove(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">//销毁自身</span></span><br><span class="line">        Destroy(gameObject);</span><br><span class="line">        <span class="comment">//爆炸特效</span></span><br><span class="line">        Instantiate(boomEffect, transform.position, Quaternion.identity);</span><br><span class="line">        <span class="comment">//每只鸟消失时判断一下当前胜负环境</span></span><br><span class="line">        GameManagerControl._instance.JudgeGameResult();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//触碰物体后动作</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//todo？开始就落地就受伤变化了</span></span><br><span class="line">        <span class="comment">//解决方案，点击释放后再开启碰撞（重力）</span></span><br><span class="line">        <span class="comment">//碰撞到猪或者木头发生受伤状态</span></span><br><span class="line">        <span class="keyword">if</span> (collision.gameObject.tag == <span class="string">&quot;Enemys&quot;</span>  || collision.gameObject.tag == <span class="string">&quot;Blocks&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//切换受伤精灵</span></span><br><span class="line">            render.sprite = hurtIMG;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//碰撞到物体后关闭技能使用</span></span><br><span class="line">        canUseSkill = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</div>
+        </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://u9king.github.io/2024/01/10/AngryBird/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://u9king.github.io/2024/01/10/AngryBird/";
+            const title         = "「AngryBird」";
+            const excerpt       = `AngryBird1. 游戏背景​	《AngryBird》是一款由芬兰游戏开发公司Rovio Entertainment开发的独特而火爆的物理学游戏。该游戏于2009年12月首次推出，迅速在全球范围内引起轰动，成为一种文化现象。背景故...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-01-15T07:14:41.311Z" itemprop="dateModified">最后编辑：2024-01-15</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" Brick Breaker" href="/2024/01/10/Brick Breaker/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                8
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                3
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                3
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AngryBird"><span class="toc-text">AngryBird</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B8%B8%E6%88%8F%E8%83%8C%E6%99%AF"><span class="toc-text">1. 游戏背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B8%B8%E6%88%8F%E5%86%85%E5%AE%B9"><span class="toc-text">2. 游戏内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6"><span class="toc-text">3. 核心机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6"><span class="toc-text">4. 基本组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%AE%BE%E8%AE%A1%E5%92%8C%E7%BC%96%E7%A0%81"><span class="toc-text">5.设计和编码</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Encyclopaedia/">Encyclopaedia</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Golang/">Golang</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Encyclopaedia/" style="font-size: 0.8em;">Encyclopaedia</a> <a href="/tags/Golang/" style="font-size: 0.6em;">Golang</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2024/01/10/AngryBird/"><i class="fa  fa-book"></i> AngryBird</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/01/10/Brick%20Breaker/"><i class="fa  fa-book"></i> Brick Breaker</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/01/10/John%20Lemon's%20Haunted%20Jaunt/"><i class="fa  fa-book"></i> John Lemon's Haunted Jaunt</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/01/10/MyLeetCode%20Note/"><i class="fa  fa-book"></i> MyLeetCode Note</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/12/29/Hexo%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/"><i class="fa  fa-book"></i> Hexo基本指令</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- New links -->
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://github.com/Candinya">
+                                    
+                                        <i class="fa fa-github"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="/atom.xml">
+                                    
+                                        <i class="fa fa-rss"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 u9king's Blog 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by u9king.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="3204190542"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
