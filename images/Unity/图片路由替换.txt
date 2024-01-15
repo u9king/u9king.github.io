@@ -1,3 +1,7 @@
 <img src="https://gitee.com/u9king/ImageHostingService/raw/master/Unity/Games/Brick%20Breaker/1.png">
 替换为
 <img src="/images/Unity/Games/Brick%20Breaker/1.png">
+
+将：https://gitee.com/u9king/ImageHostingService/raw/master/
+替换为：/images/
+
