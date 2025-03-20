@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   
   
-  <title>标签 | u9king&#39;s Blog</title>
+  <title>Unity音频混合器如何暴露参数 | u9king&#39;s Blog</title>
   
   <meta name="author" content="u9king" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -15,15 +15,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Unity" />
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https://u9king.github.io/tags/index.html">
+  <meta name="description" content="Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。   如果要将BG">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity音频混合器如何暴露参数">
+<meta property="og:url" content="https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/index.html">
 <meta property="og:site_name" content="u9king&#39;s Blog">
+<meta property="og:description" content="Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。   如果要将BG">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/images/thumb/AudioMixExposed.png">
+<meta property="article:published_time" content="2025-03-20T06:07:35.000Z">
+<meta property="article:modified_time" content="2025-03-20T06:18:55.431Z">
 <meta property="article:author" content="u9king">
+<meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/images/thumb/AudioMixExposed.png">
   
   <!-- 站点验证相关 -->
   
@@ -168,49 +175,164 @@
 
         
 
-            <style>
-  .arc-tags {
-    margin-bottom: 8rem;
-  }
-
-  .arc-tags a {
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
-    border: 1px solid #fff;
-    border-radius: 15px;
-    margin: 4px 8px 0 0;
-    font-weight: 500;
-    display: inline-block;
-    padding: 0 12px;
-    background: rgba(255, 255, 255, .5);
-    font-size: 16px;
-  }
-
-  .arc-tags a::before {
-    content: "# ";
-    color: #e8a6a6;
-  }
-</style>
-<article>
-  <div class="kratos-hentry kratos-post-inner clearfix">
-    <div class="kratos-post-content">
-      <h2 class="title-h2 text-center">
-        标签聚合
-      </h2>
-      <div style="margin-left: 2em;">
-        <h3 class="archive-page-counter">
-          当前共有 3 个标签 (゜-゜)つロ 干杯~
-        </h3>
-        <div class="tags">
-          
-            <div class="arc-tags">
-              <a class="tag-none-link" href="/tags/Encyclopaedia/" rel="tag">Encyclopaedia</a> <a class="tag-none-link" href="/tags/Golang/" rel="tag">Golang</a> <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">Unity音频混合器如何暴露参数</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2025-03-20T06:07:35.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-03-20</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">u9king</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            863
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1742451535431"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
-          
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">Unity音频混合器如何暴露参数</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="Unity音频混合器如何暴露参数"><a href="#Unity音频混合器如何暴露参数" class="headerlink" title="Unity音频混合器如何暴露参数"></a>Unity音频混合器如何暴露参数</h1><p>音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？<br>首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。<br>这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。</p>
+<img src="/images/Unity/Programming/AudioMixExposed/1.png">
+
+<p>如果要将BGM的音量暴露出去就需要在inspector窗口，右键Volumn(体积)这个变量名(不是右边的滑轨),然后选择弹出框的第一条Expose “Volume(of BGM)” to script即可</p>
+<img src="/images/Unity/Programming/AudioMixExposed/2.png">
+
+<p>在Exposed Parameters中就能看到MyExposedParam(Volumn of BGM)就是BGM的音量</p>
+<img src="/images/Unity/Programming/AudioMixExposed/3.png">
+
+<p>可以双击这个变量来自定义暴露的变量名，这里我就叫BGM了</p>
+<img src="/images/Unity/Programming/AudioMixExposed/4.png">
+
+<p>最后让我们来到代码中进行使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public AudioMixer audioMix;  //挂载音频混合器</span><br><span class="line"></span><br><span class="line">public void SetAudioMix(float percentage)</span><br><span class="line">&#123;</span><br><span class="line">    //int step = 10;  //步长，自定义可以省略</span><br><span class="line">    //float maxVolumn = 20f;  //最大音量，对应mix上定义的最大20db，也可以自定义</span><br><span class="line">    //float minVolumn = -80f;  //最小音量，对应mix上定义的最小-80db，也可以自定义</span><br><span class="line">    //currentBGMVolumn = minVolumn + Mathf.Log(1f + percentage * (step - 1), step) * (maxVolumn - minVolumn);  //对数对应</span><br><span class="line">    audioMix.SetFloat(&quot;BGM&quot;, 20f);//设置音频混合器音量,这里的BGM就是我们对外暴露所设置的变量名</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</div>
         </div>
-      </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
     </div>
-  </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/";
+            const title         = "「Unity音频混合器如何暴露参数」";
+            const excerpt       = `Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。这里我以BGM...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2025-03-20T06:18:55.431Z" itemprop="dateModified">最后编辑：2025-03-20</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" Unity中动画片段丢失(AnimationClip),如何进行重新绑定" href="/2025/03/20/Unity动画片段丢失,如何进行重新绑定/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
 </article>
 
         
@@ -224,8 +346,6 @@
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-        <div class="sticky-area">
     
     
                 <aside id="krw-about" class="widget widget-kratos-about clearfix">
@@ -266,6 +386,20 @@
     </div>
 </aside>
             
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0"><span class="toc-text">Unity音频混合器如何暴露参数</span></a></li></ol>
+    </div>
+</aside>
+                
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
