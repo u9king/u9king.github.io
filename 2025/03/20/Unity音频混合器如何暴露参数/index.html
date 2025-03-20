@@ -17,16 +17,16 @@
   
     <meta name="keywords" content="Unity" />
   
-  <meta name="description" content="Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。   如果要将BG">
+  <meta name="description" content="Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分组，你也可以直接用Master没有问题。这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。   如果要将BG">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity音频混合器如何暴露参数">
 <meta property="og:url" content="https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/index.html">
 <meta property="og:site_name" content="u9king&#39;s Blog">
-<meta property="og:description" content="Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。   如果要将BG">
+<meta property="og:description" content="Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分组，你也可以直接用Master没有问题。这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。   如果要将BG">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/images/thumb/AudioMixExposed.png">
 <meta property="article:published_time" content="2025-03-20T06:07:35.000Z">
-<meta property="article:modified_time" content="2025-03-20T06:18:55.431Z">
+<meta property="article:modified_time" content="2025-03-20T06:25:02.738Z">
 <meta property="article:author" content="u9king">
 <meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
@@ -206,7 +206,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1742451535431"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1742451902738"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -216,7 +216,7 @@
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h1 id="Unity音频混合器如何暴露参数"><a href="#Unity音频混合器如何暴露参数" class="headerlink" title="Unity音频混合器如何暴露参数"></a>Unity音频混合器如何暴露参数</h1><p>音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？<br>首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。<br>这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。</p>
+            <div itemprop="articleBody"><h1 id="Unity音频混合器如何暴露参数"><a href="#Unity音频混合器如何暴露参数" class="headerlink" title="Unity音频混合器如何暴露参数"></a>Unity音频混合器如何暴露参数</h1><p>音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？<br>首先我在AudioMixer的Master组中创建了BGM和SFX的分组，你也可以直接用Master没有问题。<br>这里我以BGM为例，如果要在代码中进行使用就需要将参数暴露出去，问题是这个按钮并不在Exposed Parameters的位置，也没有任何+按钮与之关联就很恼火。</p>
 <img src="/images/Unity/Programming/AudioMixExposed/1.png">
 
 <p>如果要将BGM的音量暴露出去就需要在inspector窗口，右键Volumn(体积)这个变量名(不是右边的滑轨),然后选择弹出框的第一条Expose “Volume(of BGM)” to script即可</p>
@@ -295,7 +295,7 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://u9king.github.io/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/";
             const title         = "「Unity音频混合器如何暴露参数」";
-            const excerpt       = `Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分类，你也可以直接用Master没有问题。这里我以BGM...`;
+            const excerpt       = `Unity音频混合器如何暴露参数音频混合器是Unity推荐管理音效混音的工具，那么如何使用代码对它进行管理呢？首先我在AudioMixer的Master组中创建了BGM和SFX的分组，你也可以直接用Master没有问题。这里我以BGM...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -317,7 +317,7 @@
                     <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2025-03-20T06:18:55.431Z" itemprop="dateModified">最后编辑：2025-03-20</time>
+                    <time datetime="2025-03-20T06:25:02.738Z" itemprop="dateModified">最后编辑：2025-03-20</time>
                 </div>
             </div>
         </footer>
