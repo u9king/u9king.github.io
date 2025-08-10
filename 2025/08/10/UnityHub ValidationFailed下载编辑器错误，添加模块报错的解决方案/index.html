@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  
+  
+  <title>UnityHub Validation Failed下载编辑器错误，添加模块报错的解决方案 | u9king&#39;s Blog</title>
+  
+  <meta name="author" content="u9king" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Unity" />
+  
+  <meta name="description" content="UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案引言本文将探讨出现Validation Failed这个错误的原因，以及可能的解决方案。如果接受下载离线版本安装包然后导入UnityHub可以忽略本文内容。 错误现象UnityHub无法下载unity6，无法安装Android Build Support,WebGL等几乎所有模块。但是，unity2022及以下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UnityHub Validation Failed下载编辑器错误，添加模块报错的解决方案">
+<meta property="og:url" content="https://u9king.github.io/2025/08/10/UnityHub%20ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:site_name" content="u9king&#39;s Blog">
+<meta property="og:description" content="UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案引言本文将探讨出现Validation Failed这个错误的原因，以及可能的解决方案。如果接受下载离线版本安装包然后导入UnityHub可以忽略本文内容。 错误现象UnityHub无法下载unity6，无法安装Android Build Support,WebGL等几乎所有模块。但是，unity2022及以下">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://u9king.github.io/2025/08/10/UnityHub%20ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/images/thumb/ValidationFailed.png">
+<meta property="article:published_time" content="2025-08-09T23:46:35.000Z">
+<meta property="article:modified_time" content="2025-08-10T00:27:40.851Z">
+<meta property="article:author" content="u9king">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://u9king.github.io/2025/08/10/UnityHub%20ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/images/thumb/ValidationFailed.png">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+    
+  </style>
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-paw"></i>
+                                                
+                                                档案馆
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                链接
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://github.com/u9king">
+                                                                
+                                                                代码仓库
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://candinya.com">
+                                                                
+                                                                主题博客
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">u9king&#39;s Blog</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>u9king&#39;s Blog</h2> <br />
+                        <span>Gamer</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://u9king.github.io/2025/08/10/UnityHub%20ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">UnityHub Validation Failed下载编辑器错误，添加模块报错的解决方案</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2025-08-09T23:46:35.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-08-10</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">u9king</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~5.55K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1754785660851"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UnityHub-ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%8E%B0%E8%B1%A1"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">错误现象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A2%E5%AF%BB%E8%BF%87%E7%A8%8B"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">探寻过程</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="UnityHub-ValidationFailed下载编辑器错误，添加模块报错的解决方案"><a href="#UnityHub-ValidationFailed下载编辑器错误，添加模块报错的解决方案" class="headerlink" title="UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案"></a>UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案</h1><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>本文将探讨出现Validation Failed这个错误的原因，以及可能的解决方案。如果接受下载离线版本安装包然后导入UnityHub可以忽略本文内容。</p>
+<h4 id="错误现象"><a href="#错误现象" class="headerlink" title="错误现象"></a>错误现象</h4><p>UnityHub无法下载unity6，无法安装Android Build Support,WebGL等几乎所有模块。但是，unity2022及以下的版本却可以正常下载。</p>
+<img src="/images/Unity/Programming/ValidationFailed/1.png">
+
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>将代理工具设置为代理所有流量的TUN模式(叫法可能有差别)。如果是这种情况单纯切换全局不行，一定要开启代理所有流量，建议选择一个海外地址，不然一定会被重定向回来。</p>
+<h4 id="探寻过程"><a href="#探寻过程" class="headerlink" title="探寻过程"></a>探寻过程</h4><p>我尝试过网上几乎所有的方法，类似用管理员权限启用，修改防火墙，确保路径没有中文，删除缓存，删除注册列表，删除Hub下载旧版本，修改默认下载位置等都不起作用。</p>
+<p>其中有一篇文章对我产生了启发作用，我们可以查看日志，将日志内容喂给AI来帮我们解读错误。纵使我编码能力有限，好在日志文件并不难找到就在UnityHub的故障排除—&gt;打开日志文件夹，也可以C:\Users&lt;你的用户名&gt;\AppData\Roaming\UnityHub\logs找到info-log.json</p>
+<img src="/images/Unity/Programming/ValidationFailed/2.png">
+
+<p>找到这个文件之后info-log.json，我好像不能直接打开，我是复制出来进行查看的，我将最后几段代码贴在下方</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:02.645Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Download Item b1178ac1-5ae1-4d2d-a117-ffdbdfa7be2a&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Transition to state download_validation&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:02.646Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Executing the Download Validation Strategy...&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:02.656Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Validating destination path permission for access...&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:02.658Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Destination Path check: Passed&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:02.658Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Validating source path (https://download.unity3d.com/download_unity/157d81624ddf/TargetSupportInstaller/UnitySetup-WebGL-Support-for-Editor-6000.0.40f1.exe) availability...&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:03.387Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;error&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Error occured in &#x27;Source Availablity Check&#x27;. AxiosError: Request failed with status code 404&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:03.387Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Source Availability check: Failed&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:03.388Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Download Item&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Download: b1178ac1-5ae1-4d2d-a117-ffdbdfa7be2a, Exiting from State: Validation, Event: ERROR&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:03.388Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Download Item&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Download: b1178ac1-5ae1-4d2d-a117-ffdbdfa7be2a, Current State: Failed, Event: ERROR&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:03.388Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Download Item b1178ac1-5ae1-4d2d-a117-ffdbdfa7be2a&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Transition to state download_failed&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以很明显看到有一段404Error的代码出现在这里</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:02.658Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;info&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Validating source path (https://download.unity3d.com/download_unity/157d81624ddf/TargetSupportInstaller/UnitySetup-WebGL-Support-for-Editor-6000.0.40f1.exe) availability...&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span><span class="string">&quot;2025-07-30T00:31:03.387Z&quot;</span><span class="punctuation">,</span><span class="attr">&quot;level&quot;</span><span class="punctuation">:</span><span class="string">&quot;error&quot;</span><span class="punctuation">,</span><span class="attr">&quot;moduleName&quot;</span><span class="punctuation">:</span><span class="string">&quot;Disk Validation Strategy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span><span class="number">8856</span><span class="punctuation">,</span><span class="attr">&quot;message&quot;</span><span class="punctuation">:</span><span class="string">&quot;Error occured in &#x27;Source Availablity Check&#x27;. AxiosError: Request failed with status code 404&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>用人工智能解读这块代码说Unity Hub在校验下载链接时，向以下 URL 发起请求：<a target="_blank" rel="noopener" href="https://download.unity3d.com/download_unity/157d81624ddf/TargetSupportInstaller/UnitySetup-WebGL-Support-for-Editor-6000.0.40f1.exe%E4%BD%86%E6%98%AF%E8%BF%94%E5%9B%9E%E4%BA%86">https://download.unity3d.com/download_unity/157d81624ddf/TargetSupportInstaller/UnitySetup-WebGL-Support-for-Editor-6000.0.40f1.exe但是返回了</a> 404（找不到资源）。随即我就把这段代码粘到浏览器上了，发现是能够正确下载的可为什么会出现错误呢？<br>然后给了我一个方法让我去模拟UnityHub整个网络服务请求过程，打开电脑的cmd(在任意位置都行)粘贴这段代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I https://download.unity3d.com/download_unity/157d81624ddf/TargetSupportInstaller/UnitySetup-WebGL-Support-for-Editor-6000.0.40f1.exe</span><br></pre></td></tr></table></figure>
+
+<img src="/images/Unity/Programming/ValidationFailed/3.png">
+
+<p>这就非常有意思了，重点关注Location这一行，并不是404而是被重定向为302也就是说我的网址被重定向为：<br>你访问的地址 <a target="_blank" rel="noopener" href="https://download.unity3d.com/%E2%80%A6">https://download.unity3d.com/…</a> 被重定向到了 <a target="_blank" rel="noopener" href="https://download.unitychina.cn/%E2%80%A6">https://download.unitychina.cn/…</a><br>那我大致明白了原因，是因为重定向导致的。Unity中国是从2022开始构建之后没有提供Unity6以及后续的所有安装包导致的。那么问题的解法也大致明白了。</p>
+<p>随即我打开自己的代理工具，将连接国际网络的工具切换成最高级别的代理所有流量TUN模式（根据每个代理工具的同步，叫法可能有差别，但是我试过切换全局也不行，一定要开启代理所有流量，选择一个海外地址，不然一定会被重定向回来）。</p>
+<img src="/images/Unity/Programming/ValidationFailed/4.png">
+
+<p>至此我的所有Hub组件都能正确下载，花了我将近一天的时间。我还在尝试一些类似Fiddler修改包头的方法，奈何水平不够还没有成功。但是使用完全代理的工具基本可以解决我的问题</p>
+<img src="/images/Unity/Programming/ValidationFailed/5.png">
+
+<p>感谢下面的文章对我提供的帮助，如果你没有找到解决办法不妨可以参考以下链接<br>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50681225/article/details/141875781">https://blog.csdn.net/weixin_50681225/article/details/141875781</a><br>2.<a target="_blank" rel="noopener" href="https://blog.csdn.net/hsy1842853303/article/details/147857422">https://blog.csdn.net/hsy1842853303/article/details/147857422</a><br>3.<a target="_blank" rel="noopener" href="https://discussions.unity.com/t/unity-hub-amdroid-module-validaition-failed/932130/3">https://discussions.unity.com/t/unity-hub-amdroid-module-validaition-failed/932130/3</a><br>4.<a target="_blank" rel="noopener" href="https://blog.csdn.net/IT_Lightning/article/details/140692220?spm=1001.2101.3001.6650.5">https://blog.csdn.net/IT_Lightning/article/details/140692220?spm=1001.2101.3001.6650.5</a><br>5.<a target="_blank" rel="noopener" href="https://developer.unity.cn/projects/63ad4936edbc2a1fd2cffc0d">https://developer.unity.cn/projects/63ad4936edbc2a1fd2cffc0d</a><br>6.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28213789169">https://zhuanlan.zhihu.com/p/28213789169</a></p>
+</div>
+        </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://u9king.github.io/2025/08/10/UnityHub%20ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://u9king.github.io/2025/08/10/UnityHub%20ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/";
+            const title         = "「UnityHub Validation Failed下载编辑器错误，添加模块报错的解决方案」";
+            const excerpt       = `UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案引言本文将探讨出现Validation Failed这个错误的原因，以及可能的解决方案。如果接受下载离线版本安装包然后导入UnityHub可以忽略...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2025-08-10T00:27:40.851Z" itemprop="dateModified">最后编辑：2025-08-10</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" Unity音频混合器如何暴露参数" href="/2025/03/20/Unity音频混合器如何暴露参数/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" UnityWebGL打包后本地启动方法" href="/2025/08/10/UnityWebGL打包后本地启动方法/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                18
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                4
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                3
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UnityHub-ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%8E%B0%E8%B1%A1"><span class="toc-text">错误现象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A2%E5%AF%BB%E8%BF%87%E7%A8%8B"><span class="toc-text">探寻过程</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Encyclopaedia/">Encyclopaedia</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Golang/">Golang</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">6</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Encyclopaedia/" style="font-size: 0.7em;">Encyclopaedia</a> <a href="/tags/Golang/" style="font-size: 0.6em;">Golang</a> <a href="/tags/Unity/" style="font-size: 0.8em;">Unity</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/"><i class="fa  fa-book"></i> UnityWebGL打包后本地启动方法</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/08/10/UnityHub%20ValidationFailed%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%BE%91%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa  fa-book"></i> UnityHub Validation Failed下载编辑器错误，添加模块报错的解决方案</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/03/20/Unity%E9%9F%B3%E9%A2%91%E6%B7%B7%E5%90%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%9A%B4%E9%9C%B2%E5%8F%82%E6%95%B0/"><i class="fa  fa-book"></i> Unity音频混合器如何暴露参数</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/03/20/Unity%E5%8A%A8%E7%94%BB%E7%89%87%E6%AE%B5%E4%B8%A2%E5%A4%B1,%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E9%87%8D%E6%96%B0%E7%BB%91%E5%AE%9A/"><i class="fa  fa-book"></i> Unity中动画片段丢失(AnimationClip),如何进行重新绑定</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/08/30/Unity%E8%8E%B7%E5%8F%96Animator%E5%8A%A8%E7%94%BB%E6%92%AD%E6%94%BE%E5%AE%8C%E6%88%90%E4%BA%8B%E4%BB%B6/"><i class="fa  fa-book"></i> Unity获取Animator动画播放完成事件</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- New links -->
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://github.com/Candinya">
+                                    
+                                        <i class="fa fa-github"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="/atom.xml">
+                                    
+                                        <i class="fa fa-rss"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2025 u9king's Blog 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by u9king.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="3204190542"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

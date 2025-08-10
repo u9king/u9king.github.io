@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   
   
-  <title>标签: Encyclopaedia | u9king&#39;s Blog</title>
+  <title>UnityWebGL打包后本地启动方法 | u9king&#39;s Blog</title>
   
   <meta name="author" content="u9king" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -15,15 +15,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Unity" />
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签: Encyclopaedia">
-<meta property="og:url" content="https://u9king.github.io/tags/Encyclopaedia/index.html">
+  <meta name="description" content="UnityWebGL打包后本地启动方法引言常见WebGL开启方法常需要重新打包点击Build and Run或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我们需要一个能在本地开启测试的WebGL的方法。 解决方案使用的是nodejs中的一个轻量级命令行工具http-server只有100kB左右。熟悉npm的可以在cmd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UnityWebGL打包后本地启动方法">
+<meta property="og:url" content="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="u9king&#39;s Blog">
+<meta property="og:description" content="UnityWebGL打包后本地启动方法引言常见WebGL开启方法常需要重新打包点击Build and Run或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我们需要一个能在本地开启测试的WebGL的方法。 解决方案使用的是nodejs中的一个轻量级命令行工具http-server只有100kB左右。熟悉npm的可以在cmd">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/images/thumb/WebGLServer.png">
+<meta property="article:published_time" content="2025-08-10T00:24:35.000Z">
+<meta property="article:modified_time" content="2025-08-10T00:24:19.879Z">
 <meta property="article:author" content="u9king">
+<meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/images/thumb/WebGLServer.png">
   
   <!-- 站点验证相关 -->
   
@@ -168,200 +175,169 @@
 
         
 
-            <!-- Breadcrumb for tag & category page -->
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">UnityWebGL打包后本地启动方法</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2025-08-10T00:24:35.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-08-10</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">u9king</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            1460
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1754785459879"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">UnityWebGL打包后本地启动方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E5%AD%A6"><span class="toc-number">1.0.1.</span> <span class="toc-text">手把手教学</span></a></li></ol></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="UnityWebGL打包后本地启动方法"><a href="#UnityWebGL打包后本地启动方法" class="headerlink" title="UnityWebGL打包后本地启动方法"></a>UnityWebGL打包后本地启动方法</h1><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>常见WebGL开启方法常需要重新打包点击<code>Build and Run</code>或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我们需要一个能在本地开启测试的WebGL的方法。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>使用的是nodejs中的一个轻量级命令行工具http-server只有100kB左右。熟悉npm的可以在cmd中用命令npm install -g http-server安装，然后用命令http-server -p 8000打开服务器Url为<a href="http://127.0.0.1:8000。http-server的github地址:https://github.com/http-party/http-server，熟悉github的可以自行翻阅。">http://127.0.0.1:8000。http-server的github地址:https://github.com/http-party/http-server，熟悉github的可以自行翻阅。</a></p>
+<h3 id="手把手教学"><a href="#手把手教学" class="headerlink" title="手把手教学"></a>手把手教学</h3><p>下面我将从以下几个步骤来阐述WebGL本地开启的方法，<br>1.找到你所在的打包WebGL的位置，能看到3个游戏相关的文件，如果没有还请移步Unity的WebGL先行打包，确定存在这三个文件的当前目录下在这里打开cmd窗口</p>
+<img src="/images/Unity/Programming/WebGLServer/1.png">
 
-    <article class="kratos-hentry kratos-entry-border-new clearfix">
-        <div class="kratos-breadcrumb">
-            <a href="/">
-                <i class="fa fa-home"></i>
-            </a>
-            <i class="fa fa-angle-right"></i>
-            
-                <a href="/tags/">
-                    标签
-                </a>
-                <i class="fa fa-angle-right"></i>
-                <a href="/tags/Encyclopaedia">
-                    Encyclopaedia
-                </a>
-            
-            
+<p>2.输入cmd按下回车，直接在当前目录下打开Windows命令处理程序窗口</p>
+<img src="/images/Unity/Programming/WebGLServer/2.png">
+
+<p>3.检查node是否存在,node版本没有太大的关系用LTS都可以，下载地址:<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/%EF%BC%8C%E9%9C%80%E8%A6%81%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%8Bnode%E7%9A%84%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%9C%A8%E7%BD%91%E4%B8%8A%E6%90%9C%E7%B4%A2(%E5%8F%82%E8%80%83:https://blog.csdn.net/web15185420056/article/details/144251082)%EF%BC%8C%E7%9B%B8%E4%BF%A1%E6%88%91%E5%A6%82%E6%9E%9C%E4%BC%9A%E6%8E%A5%E8%A7%A6%E7%A8%8B%E5%BA%8F%EF%BC%8C%E9%85%8D%E7%BD%AEnode%E7%8E%AF%E5%A2%83%E6%98%AF%E8%BF%99%E8%BE%88%E5%AD%90%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E4%B9%8B%E4%B8%80%E3%80%82">https://nodejs.org/zh-cn/download/，需要配置一下node的环境，具体方法可以在网上搜索(参考:https://blog.csdn.net/web15185420056/article/details/144251082)，相信我如果会接触程序，配置node环境是这辈子最简单的事情之一。</a></p>
+<img src="/images/Unity/Programming/WebGLServer/3.png">
+
+<p>4.在确保node已经正常运行的情况下安装http-server<br><code>npm install -g http-server</code>简单的一行代码就能搞定，能看到added没报错就已经成功了，这里我又添加了一行http-server -v查看当前版本，确保安装成功</p>
+<img src="/images/Unity/Programming/WebGLServer/4.png">
+
+<p>5.当前所有条件就准备齐全了，下面就可以打开自己的webgl项目了，同样的在WebGL文件所在目录下打开Windows命令处理程序窗口，输入http-server -p 8000，可以看到Available on:<br><a target="_blank" rel="noopener" href="http://192.168.1.107:8000/">http://192.168.1.107:8000</a><br><a href="http://127.0.0.1:8000这两个就是本地网络地址">http://127.0.0.1:8000这两个就是本地网络地址</a><br>同时为大家解释一下-p 8000就是端口号8000，基本上你用什么端口号都行就是别用有特殊含义的端口号就行，什么80,443,22,25,1这些别用，我们常用的就是8000，或者8080<br><img src="/images/Unity/Programming/WebGLServer/5.png"></p>
+<p>此时将这个<a href="http://127.0.0.1:8000粘贴到自己浏览器中就可以，切记你看最后一句hit">http://127.0.0.1:8000粘贴到自己浏览器中就可以，切记你看最后一句hit</a> Ctrl-c是关闭服务器，所有喜欢用CtrlC，CtrlV粘贴的小伙伴要当心。</p>
+<img src="/images/Unity/Programming/WebGLServer/6.png">
+
+<p>此时就能够运行自己的WebGL游戏了在浏览器上。</p>
+<p>最后给大家解释一下，按需获取<br>1.本地服务器端口<br><a href="http://127.0.0.1:8000这个地址端口8000对应的就是你电脑上正在运行的本地服务器（Windows里就是打开的命令行窗口启动的程序）。">http://127.0.0.1:8000这个地址端口8000对应的就是你电脑上正在运行的本地服务器（Windows里就是打开的命令行窗口启动的程序）。</a><br>如果你关掉那个命令行窗口，服务器就停止了，网页就打不开了。<br>重新开一个命令行窗口，重复启动命令，就能新建一个本地服务器。<br>2.127.0.0.1是本地回环地址，是你的电脑自己用的地址，只能在你自己电脑上访问。别人用别的电脑访问不了这个地址，确保你本地测试安全又方便。</p>
+</div>
         </div>
-    </article>
-
-
-
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2023/12/29/Hexo%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/">
-                        
-                            <img class="kratos-entry-thumb-new-img" src="/images/thumb/Hexo.jpg" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/Encyclopaedia/">Encyclopaedia</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2023/12/29/Hexo%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" itemprop="mainEntityOfPage"><span itemprop="name headline">Hexo基本指令</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                Hexo基本指令1.介绍Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上。因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。
-2.基本指...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2023-12-29T12:30:56.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2023-12-29</a>
-                        </time>
-                        <a>
-                            
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/Encyclopaedia/" rel="tag">Encyclopaedia</a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2023/12/29/Hexo%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2023/12/20/LaTeX%E8%AF%AD%E6%B3%95/">
-                        
-                            <img class="kratos-entry-thumb-new-img" src="/images/thumb/LaTeX.png" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/Encyclopaedia/">Encyclopaedia</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2023/12/20/LaTeX%E8%AF%AD%E6%B3%95/" itemprop="mainEntityOfPage"><span itemprop="name headline">LaTeX语法</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                LaTeX语法1.论文排版常用语句123456789101112131415161718192021\title&#123;文章标题&#125;\begin&#123;document&#125;\maketitle		创建标题\be...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2023-12-20T11:40:56.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2023-12-20</a>
-                        </time>
-                        <a>
-                            
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/Encyclopaedia/" rel="tag">Encyclopaedia</a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2023/12/20/LaTeX%E8%AF%AD%E6%B3%95/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2023/12/19/matlab%E8%AF%AD%E6%B3%95/">
-                        
-                            <img class="kratos-entry-thumb-new-img" src="/images/thumb/matlab.jpg" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/Encyclopaedia/">Encyclopaedia</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2023/12/19/matlab%E8%AF%AD%E6%B3%95/" itemprop="mainEntityOfPage"><span itemprop="name headline">matlab语法</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                matlab语法1.数据类型123456789101112131415161718192021222324252627282930%数字、字符与字符串、矩阵、元胞数组、结构体%字符与字符串s = &#x27;a&#x27;;abs(s...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2023-12-19T03:43:56.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2023-12-19</a>
-                        </time>
-                        <a>
-                            
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/Encyclopaedia/" rel="tag">Encyclopaedia</a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2023/12/19/matlab%E8%AF%AD%E6%B3%95/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-
-
-
-
-    <div class="hidden">
-        <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
         
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
     </div>
-
-
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/";
+            const title         = "「UnityWebGL打包后本地启动方法」";
+            const excerpt       = `UnityWebGL打包后本地启动方法引言常见WebGL开启方法常需要重新打包点击Build and Run或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2025-08-10T00:24:19.879Z" itemprop="dateModified">最后编辑：2025-08-10</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" UnityHub Validation Failed下载编辑器错误，添加模块报错的解决方案" href="/2025/08/10/UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+</article>
 
         
 
@@ -374,8 +350,6 @@
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-        <div class="sticky-area">
     
     
                 <aside id="krw-about" class="widget widget-kratos-about clearfix">
@@ -416,6 +390,20 @@
     </div>
 </aside>
             
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95"><span class="toc-text">UnityWebGL打包后本地启动方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E5%AD%A6"><span class="toc-text">手把手教学</span></a></li></ol></li></ol></li></ol>
+    </div>
+</aside>
+                
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
