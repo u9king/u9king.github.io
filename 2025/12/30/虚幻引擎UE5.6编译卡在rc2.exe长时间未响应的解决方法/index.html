@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   
   
-  <title>UnityWebGL打包后本地启动方法 | u9king&#39;s Blog</title>
+  <title>虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法 | u9king&#39;s Blog</title>
   
   <meta name="author" content="u9king" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -15,22 +15,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="Unity" />
+    <meta name="keywords" content="UE5" />
   
-  <meta name="description" content="UnityWebGL打包后本地启动方法引言常见WebGL开启方法常需要重新打包点击Build and Run或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我们需要一个能在本地开启测试的WebGL的方法。 解决方案使用的是nodejs中的一个轻量级命令行工具http-server只有100kB左右。熟悉npm的可以在cmd">
+  <meta name="description" content="虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法引言本文将探讨出现Resource Default.rc2并且长时间未响应的解决办法。我将分享我的解决经验，帮助同样卡在这一步的小伙伴少走弯路，作为虚幻新手小白，文中若有理解偏差，欢迎各位前辈交流指正，与大家共同探讨学习。 错误现象项目编译过长中卡在Resource Default.rc2并且长时间未响应，甚至在Visual Studi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UnityWebGL打包后本地启动方法">
-<meta property="og:url" content="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法">
+<meta property="og:url" content="https://u9king.github.io/2025/12/30/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5.6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2.exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="u9king&#39;s Blog">
-<meta property="og:description" content="UnityWebGL打包后本地启动方法引言常见WebGL开启方法常需要重新打包点击Build and Run或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我们需要一个能在本地开启测试的WebGL的方法。 解决方案使用的是nodejs中的一个轻量级命令行工具http-server只有100kB左右。熟悉npm的可以在cmd">
+<meta property="og:description" content="虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法引言本文将探讨出现Resource Default.rc2并且长时间未响应的解决办法。我将分享我的解决经验，帮助同样卡在这一步的小伙伴少走弯路，作为虚幻新手小白，文中若有理解偏差，欢迎各位前辈交流指正，与大家共同探讨学习。 错误现象项目编译过长中卡在Resource Default.rc2并且长时间未响应，甚至在Visual Studi">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/images/thumb/WebGLServer.png">
-<meta property="article:published_time" content="2025-08-10T00:24:35.000Z">
-<meta property="article:modified_time" content="2025-10-12T05:50:20.377Z">
+<meta property="og:image" content="https://u9king.github.io/2025/12/30/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5.6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2.exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/images/thumb/UE5rc2Issue.png">
+<meta property="article:published_time" content="2025-12-29T23:46:35.000Z">
+<meta property="article:modified_time" content="2025-12-30T01:42:55.293Z">
 <meta property="article:author" content="u9king">
-<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="UE5">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/images/thumb/WebGLServer.png">
+<meta name="twitter:image" content="https://u9king.github.io/2025/12/30/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5.6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2.exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/images/thumb/UE5rc2Issue.png">
   
   <!-- 站点验证相关 -->
   
@@ -177,15 +177,15 @@
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://u9king.github.io/2025/12/30/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5.6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2.exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">UnityWebGL打包后本地启动方法</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><time datetime="2025-08-10T00:24:35.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-08-10</time></li>
+                <li><time datetime="2025-12-29T23:46:35.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-12-30</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">u9king</span>
                 </li>
@@ -194,7 +194,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            1460
+                            ~3.41K
                         
                         字
                     </li>
@@ -206,36 +206,56 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1760248220377"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1767058975293"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
                 <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">UnityWebGL打包后本地启动方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E5%AD%A6"><span class="toc-number">1.0.1.</span> <span class="toc-text">手把手教学</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5-6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2-exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%8E%B0%E8%B1%A1"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">错误现象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">知识储备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A2%E5%AF%BB%E8%BF%87%E7%A8%8B"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">探寻过程</span></a></li></ol></li></ol></li></ol></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h1 id="UnityWebGL打包后本地启动方法"><a href="#UnityWebGL打包后本地启动方法" class="headerlink" title="UnityWebGL打包后本地启动方法"></a>UnityWebGL打包后本地启动方法</h1><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>常见WebGL开启方法常需要重新打包点击<code>Build and Run</code>或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我们需要一个能在本地开启测试的WebGL的方法。</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>使用的是nodejs中的一个轻量级命令行工具http-server只有100kB左右。熟悉npm的可以在cmd中用命令<code>npm install -g http-server</code>安装，然后用命令<code>http-server -p 8000</code>打开服务器Url为<a href="http://127.0.0.1:8000。http-server的github地址:https://github.com/http-party/http-server，熟悉github的可以自行翻阅。">http://127.0.0.1:8000。http-server的github地址:https://github.com/http-party/http-server，熟悉github的可以自行翻阅。</a></p>
-<h3 id="手把手教学"><a href="#手把手教学" class="headerlink" title="手把手教学"></a>手把手教学</h3><p>下面我将从以下几个步骤来阐述WebGL本地开启的方法，<br>1.找到你所在的打包WebGL的位置，能看到3个游戏相关的文件，如果没有还请移步Unity的WebGL先行打包，确定存在这三个文件的当前目录下在这里打开cmd窗口</p>
-<img src="/images/Unity/Programming/WebGLServer/1.png">
+            <div itemprop="articleBody"><h1 id="虚幻引擎UE5-6编译卡在rc2-exe长时间未响应的解决方法"><a href="#虚幻引擎UE5-6编译卡在rc2-exe长时间未响应的解决方法" class="headerlink" title="虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法"></a>虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法</h1><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>本文将探讨出现Resource Default.rc2并且长时间未响应的解决办法。我将分享我的解决经验，帮助同样卡在这一步的小伙伴少走弯路，作为虚幻新手小白，文中若有理解偏差，欢迎各位前辈交流指正，与大家共同探讨学习。</p>
+<h4 id="错误现象"><a href="#错误现象" class="headerlink" title="错误现象"></a>错误现象</h4><p>项目编译过长中卡在Resource Default.rc2并且长时间未响应，甚至在Visual Studio2022中重新编译也会同样卡在这个.rc2上，导致UE项目完全无法打开。本人实测至少30分钟以上，没有进展，并且电脑也会变得异常卡顿。</p>
+<img src="/images/UE5/Programming/UE5rc2Issue/1.png">
 
-<p>2.输入cmd按下回车，直接在当前目录下打开Windows命令处理程序窗口</p>
-<img src="/images/Unity/Programming/WebGLServer/2.png">
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>修改你的项目下的Saved\UnrealBuildTool\BuildConfiguration.xml的文件，添加如下内容</p>
+<img src="/images/UE5/Programming/UE5rc2Issue/2.png">
 
-<p>3.检查node是否存在,node版本没有太大的关系用LTS都可以，下载地址:<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/%EF%BC%8C%E9%9C%80%E8%A6%81%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%8Bnode%E7%9A%84%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%9C%A8%E7%BD%91%E4%B8%8A%E6%90%9C%E7%B4%A2(%E5%8F%82%E8%80%83:https://blog.csdn.net/web15185420056/article/details/144251082)%EF%BC%8C%E7%9B%B8%E4%BF%A1%E6%88%91%E5%A6%82%E6%9E%9C%E4%BC%9A%E6%8E%A5%E8%A7%A6%E7%A8%8B%E5%BA%8F%EF%BC%8C%E9%85%8D%E7%BD%AEnode%E7%8E%AF%E5%A2%83%E6%98%AF%E8%BF%99%E8%BE%88%E5%AD%90%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E4%B9%8B%E4%B8%80%E3%80%82">https://nodejs.org/zh-cn/download/，需要配置一下node的环境，具体方法可以在网上搜索(参考:https://blog.csdn.net/web15185420056/article/details/144251082)，相信我如果会接触程序，配置node环境是这辈子最简单的事情之一。</a></p>
-<img src="/images/Unity/Programming/WebGLServer/3.png">
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Configuration</span> <span class="attr">xmlns</span>=<span class="string">&quot;https://www.unrealengine.com/BuildConfiguration&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">BuildConfiguration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bAllowUBAExecutor</span>&gt;</span>false<span class="tag">&lt;/<span class="name">bAllowUBAExecutor</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">BuildConfiguration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>4.在确保node已经正常运行的情况下安装http-server<br><code>npm install -g http-server</code>简单的一行代码就能搞定，能看到added没报错就已经成功了，这里我又添加了一行http-server -v查看当前版本，确保安装成功</p>
-<img src="/images/Unity/Programming/WebGLServer/4.png">
+<h4 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h4><p>在提及探寻过程前，先铺垫两个关键知识。<br>1.电脑是同时存在至少两个BuildConfiguration.xml，引擎的和项目的。并且项目的优先级会大于引擎，也就是说如果项目内存在，项目的这个是最终执行的。貌似是右键.uproject生成VS项目文件的时候生成的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">引擎默认启用：%APPDATA%\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml</span><br><span class="line">项目默认启用：你的项目\Saved\UnrealBuildTool\BuildConfiguration.xml</span><br><span class="line">优先级：项目&gt;引擎</span><br></pre></td></tr></table></figure>
 
-<p>5.当前所有条件就准备齐全了，下面就可以打开自己的webgl项目了，同样的在WebGL文件所在目录下打开Windows命令处理程序窗口，输入<code>http-server -p 8000</code>，可以看到Available on:<br><a target="_blank" rel="noopener" href="http://192.168.1.107:8000/">http://192.168.1.107:8000</a><br><a href="http://127.0.0.1:8000这两个就是本地网络地址">http://127.0.0.1:8000这两个就是本地网络地址</a><br>同时为大家解释一下-p 8000就是端口号8000，基本上你用什么端口号都行就是别用有特殊含义的端口号就行，什么80,443,22,25,1这些别用，我们常用的就是8000，或者8080<br><img src="/images/Unity/Programming/WebGLServer/5.png"></p>
-<p>此时将这个<a href="http://127.0.0.1:8000粘贴到自己浏览器中就可以，切记你看最后一句hit">http://127.0.0.1:8000粘贴到自己浏览器中就可以，切记你看最后一句hit</a> Ctrl-c是关闭服务器，所有喜欢用CtrlC，CtrlV粘贴的小伙伴要当心。</p>
-<img src="/images/Unity/Programming/WebGLServer/6.png">
+<p>2.虚幻每个版本都有自己对应的编辑器，特别是MSVC和WindowsSDK，如果与虚幻版本不相同时常会出现意料之外的错误</p>
+<p><a target="_blank" rel="noopener" href="https://dev.epicgames.com/documentation/zh-cn/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine">UE5.x对应VisualStudio的编译版本网址</a></p>
+<h4 id="探寻过程"><a href="#探寻过程" class="headerlink" title="探寻过程"></a>探寻过程</h4><p>以下是我曾尝试过但无效的方案（多为gpt和gemini建议），为了避免大家少走弯路，我记录一下结果。各位也可以亲自尝试一下，毕竟错误原因各不相同。</p>
+<p>1.修改%APPDATA%\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml为以下内容,这是我最先看到的方案，没想到是最接近结果的方案</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Configuration</span> <span class="attr">xmlns</span>=<span class="string">&quot;https://www.unrealengine.com/BuildConfiguration&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">BuildConfiguration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bAllowUBAExecutor</span>&gt;</span>false<span class="tag">&lt;/<span class="name">bAllowUBAExecutor</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">BuildConfiguration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>此时就能够运行自己的WebGL游戏了在浏览器上。</p>
-<p>最后给大家解释一下，按需获取<br>1.本地服务器端口<br><a href="http://127.0.0.1:8000这个地址端口8000对应的就是你电脑上正在运行的本地服务器（Windows里就是打开的命令行窗口启动的程序）。">http://127.0.0.1:8000这个地址端口8000对应的就是你电脑上正在运行的本地服务器（Windows里就是打开的命令行窗口启动的程序）。</a><br>如果你关掉那个命令行窗口，服务器就停止了，网页就打不开了。<br>重新开一个命令行窗口，重复启动命令，就能新建一个本地服务器。<br>2.127.0.0.1是本地回环地址，是你的电脑自己用的地址，只能在你自己电脑上访问。别人用别的电脑访问不了这个地址，确保你本地测试安全又方便。</p>
+<p>结果:尝试并重启无效，猜测是UE5引擎有对这个文件的缓存（GPT告诉我的），暂不确定。</p>
+<p>2.指定编译器的版本WindowsSdkVersion为10.0.22621.0对于UE5.6，这个方案同样也是两个地方一个%APPDATA%下的BuildConfiguration.xml还有一个项目的Saved\UnrealBuildTool下的BuildConfiguration.xml我都尝试过</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Configuration</span> <span class="attr">xmlns</span>=<span class="string">&quot;https://www.unrealengine.com/BuildConfiguration&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">WindowsPlatform</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">WindowsSdkVersion</span>&gt;</span>10.0.22621.0<span class="tag">&lt;/<span class="name">WindowsSdkVersion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">WindowsPlatform</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结果:尝试并重启无效，由于我是多个虚幻版本同时存在UE5.0,UE5.3,UE5.6所以修改%APPDATA%通常不是一个特别好的选择，并且如果你的开在Configuration中间是空白，按照虚幻的说法它会自动找最适合自己版本的编译器版本</p>
+<p>3.重新手动构建项目，也就是删除除了Content,Config和Source还有.uproject外的所有文件，并且右键.uproject先Generate再双击打开项目Rebuild。</p>
+<img src="/images/UE5/Programming/UE5rc2Issue/3.png">
+
+
+
+<p>4.修改项目的Config&#x2F;DefaultEngine.ini文件,添加以下内容</p>
+<img src="/images/UE5/Programming/UE5rc2Issue/4.png">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[BuildSettings] </span><br><span class="line">bUseUnrealBuildAccelerator=false </span><br><span class="line">bUseUBTMakefiles=false </span><br><span class="line">bAllowFASTBuild=false</span><br></pre></td></tr></table></figure>
+
+<p>结果：尝试无效，我其实觉得这个是有可能正确的，奈何水平不够，暂定为无效。</p>
+<p>5.添加引擎路径和项目路径到Windows的杀毒软件白名单中，Windows安全中心-&gt;病毒与防护-&gt;文件夹限制访问-&gt;添加引擎和项目路劲<br>结果:尝试无效，我听闻rc2.exe是会与杀毒软件有关导致卡死，但是我这边实测没有效果</p>
+<p>6.验证虚幻引擎完整性和Visual Studio2022的完整性<br>结果：尝试无效，这个非常痛苦且无效，虚幻引擎还好，VS2022验证完整性等于完全重装，好多设置都没有了，不推荐并且无效</p>
+<p>结果：尝试并重启且无效，相信我，我尝试了不下20遍这个操作，这是所有问题的万能(无效)解法，并不是你编译的次数多问题就能解决，虽然他们都会告诉你应该这么做。</p>
+<p>7.物理阻断UBA执行文件，找到引擎目录下的将UbaAgent.exe修改为UbaAgent.exe.bak<br>结果：尝试无效</p>
+<p>8.在VS的解决方案资源管理器里，右键点击你的项目 -&gt; 属性 -&gt; NMake -&gt;生成命令行。在现有的命令后面手动加上 -NoUBA<br>结果：尝试无效</p>
+<p>感谢下面的文章对我提供的帮助，如果你没有找到解决办法不妨可以参考以下链接<br>1.<a target="_blank" rel="noopener" href="https://forums.unrealengine.com/t/ue-5-6-project-creation-fails-on-default-rc2-rc-exe-exit-code-1/2595642/4">https://forums.unrealengine.com/t/ue-5-6-project-creation-fails-on-default-rc2-rc-exe-exit-code-1/2595642/4</a><br>2.<a target="_blank" rel="noopener" href="https://forums.unrealengine.com/t/ue-5-6-project-stuck-at-rc2-exe-when-building/2687891/3">https://forums.unrealengine.com/t/ue-5-6-project-stuck-at-rc2-exe-when-building/2687891/3</a><br>3.<a target="_blank" rel="noopener" href="https://gamedev.tv/courses/unreal-c-dev/lecture/7985/thread/34317">https://gamedev.tv/courses/unreal-c-dev/lecture/7985/thread/34317</a><br>4.<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nnQWYME5T/?spm_id_from=333.1391.0.0&vd_source=9a146b8fa39d5ea05ce3a524dcff45d4">https://www.bilibili.com/video/BV1nnQWYME5T/?spm_id_from=333.1391.0.0&amp;vd_source=9a146b8fa39d5ea05ce3a524dcff45d4</a><br>5.<a target="_blank" rel="noopener" href="https://dev.epicgames.com/documentation/zh-cn/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine">https://dev.epicgames.com/documentation/zh-cn/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine</a></p>
 </div>
         </div>
         
@@ -285,7 +305,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/",
+                text: "https://u9king.github.io/2025/12/30/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5.6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2.exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -297,9 +317,9 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://u9king.github.io/2025/08/10/UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95/";
-            const title         = "「UnityWebGL打包后本地启动方法」";
-            const excerpt       = `UnityWebGL打包后本地启动方法引言常见WebGL开启方法常需要重新打包点击Build and Run或者将游戏放到Unity的云服务器上，作为开发者而言这两个方案一个为了开启再次打包，另一个直接放到了公开环境都不太合适。所以我...`;
+            const hostUrl       = "https://u9king.github.io/2025/12/30/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5.6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2.exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/";
+            const title         = "「虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法」";
+            const excerpt       = `虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法引言本文将探讨出现Resource Default.rc2并且长时间未响应的解决办法。我将分享我的解决经验，帮助同样卡在这一步的小伙伴少走弯路，作为虚幻新手小白，文中若有理...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -318,10 +338,10 @@
             <div class="footer-tag clearfix">
                 <div class="pull-left">
                 <i class="fa fa-tags"></i>
-                    <a class="tag-none-link" href="/tags/Unity/" rel="tag">Unity</a>
+                    <a class="tag-none-link" href="/tags/UE5/" rel="tag">UE5</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2025-10-12T05:50:20.377Z" itemprop="dateModified">最后编辑：2025-10-12</time>
+                    <time datetime="2025-12-30T01:42:55.293Z" itemprop="dateModified">最后编辑：2025-12-30</time>
                 </div>
             </div>
         </footer>
@@ -330,13 +350,9 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" UnityHub Validation Failed下载编辑器错误，添加模块报错的解决方案" href="/2025/08/10/UnityHub ValidationFailed下载编辑器错误，添加模块报错的解决方案/">&lt; 上一篇</a>
+                <a title=" 独游指针IndiePointer游戏测评2025" href="/2025/10/12/独游指针IndiePointer游戏测评2025/">&lt; 上一篇</a>
             </div>
             
-            
-            <div class="nav-next clearfix">
-                <a title=" 独游指针IndiePointer游戏测评2025" href="/2025/10/12/独游指针IndiePointer游戏测评2025/">下一篇 &gt;</a>
-            </div>
             
         </nav>
     
@@ -404,7 +420,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UnityWebGL%E6%89%93%E5%8C%85%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95"><span class="toc-text">UnityWebGL打包后本地启动方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E5%AD%A6"><span class="toc-text">手把手教学</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8EUE5-6%E7%BC%96%E8%AF%91%E5%8D%A1%E5%9C%A8rc2-exe%E9%95%BF%E6%97%B6%E9%97%B4%E6%9C%AA%E5%93%8D%E5%BA%94%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">虚幻引擎UE5.6编译卡在rc2.exe长时间未响应的解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%8E%B0%E8%B1%A1"><span class="toc-text">错误现象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87"><span class="toc-text">知识储备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A2%E5%AF%BB%E8%BF%87%E7%A8%8B"><span class="toc-text">探寻过程</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </aside>
                 
